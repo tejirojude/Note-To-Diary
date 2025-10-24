@@ -73,8 +73,8 @@ export default function QuickNoteToDiary() {
     });
 
   return (
-    <div className="min-h-screen bg-[#f8f5e9] flex flex-col items-center py-8 px-4 font-serif">
-      <h1 className="text-2xl mb-6 text-[#3e3a32] font-semibold">Quick Note to Diary</h1>
+    <div className="min-h-screen bg-[#f8f5e9] flex flex-col items-center py-6 px-2 sm:px-4 font-serif">
+      <h1 className="text-xl sm:text-2xl mb-6 text-[#3e3a32] font-semibold">Quick Note to Diary</h1>
 
       <div className="bg-white/70 rounded-2xl shadow-md w-full max-w-md p-4 border border-[#e4dcc4]">
         <textarea
@@ -94,20 +94,20 @@ export default function QuickNoteToDiary() {
       </div>
 
       <div className="w-full max-w-md mt-8">
-        <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-medium text-[#3e3a32]">Your Notes</h2>
-            <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-4 sm:gap-0">
+            <h2 className="text-base sm:text-lg font-medium text-[#3e3a32]">Your Notes</h2>
+            <div className="flex items-center gap-2 sm:gap-4">
                 <div>
-                    <label htmlFor="filter" className="text-sm mr-2 text-[#3e3a32]">Filter:</label>
-                    <select id="filter" value={filter} onChange={e => setFilter(e.target.value)} className="rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <label htmlFor="filter" className="text-sm mr-1 sm:mr-2 text-[#3e3a32]">Filter:</label>
+                    <select id="filter" value={filter} onChange={e => setFilter(e.target.value)} className="rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-sm p-1">
                         <option value="all">All</option>
                         <option value="pending">Pending</option>
                         <option value="completed">Completed</option>
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="sort" className="text-sm mr-2 text-[#3e3a32]">Sort:</label>
-                    <select id="sort" value={sort} onChange={e => setSort(e.target.value)} className="rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <label htmlFor="sort" className="text-sm mr-1 sm:mr-2 text-[#3e3a32]">Sort:</label>
+                    <select id="sort" value={sort} onChange={e => setSort(e.target.value)} className="rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-sm p-1">
                         <option value="newest">Newest</option>
                         <option value="oldest">Oldest</option>
                     </select>
@@ -141,7 +141,7 @@ export default function QuickNoteToDiary() {
                     <p className="text-xs text-[#867d6a] mt-1">{new Date(note.date).toLocaleString()}</p>
                   </div>
                 )}
-                <div className="flex gap-2 items-center ml-2">
+                <div className="flex flex-col sm:flex-row gap-2 items-center ml-2">
                   {editingNoteId === note.id ? (
                     <button onClick={() => saveEdit(note.id)}>
                       <Save size={20} className="text-blue-500 hover:text-blue-700 transition" />
