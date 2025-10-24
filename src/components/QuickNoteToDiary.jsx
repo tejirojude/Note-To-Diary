@@ -81,9 +81,9 @@ export default function QuickNoteToDiary() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Write your note here..."
-          className="w-full h-32 p-3 rounded-md border border-[#d8cdb2] bg-[#fffaf1] focus:outline-none focus:ring-2 focus:ring-[#c2b280] text-[#3e3a32]"
+          className="w-full h-32 p-0 text-base bg-transparent focus:outline-none text-[#3e3a32] placeholder:text-[#6b6454]"
         />
-        <div className="flex justify-between mt-3">
+        <div className="flex justify-between mt-3 border-t border-[#e4dcc4] pt-3">
           <button
             onClick={addNote}
             className="bg-[#c2b280] text-white px-4 py-2 rounded-lg hover:bg-[#a6956b] transition flex items-center gap-2"
